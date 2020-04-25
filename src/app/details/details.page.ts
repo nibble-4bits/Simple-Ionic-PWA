@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { EventResponse, EmergencyEvent, Acknowledgment } from '../interfaces';
+import { EventResponse, EmergencyEvent, Acknowledgement } from '../interfaces';
 import { ActivatedRoute } from '@angular/router';
 import { EventsService } from '../events.service';
 
@@ -12,7 +12,7 @@ export class DetailsPage implements OnInit {
   eventId: number;
   eventResponse: EventResponse;
   event: EmergencyEvent;
-  acknowledgments: Acknowledgment[] = [];
+  acknowledgements: Acknowledgement[] = [];
   newNote = '';
 
   constructor(private route: ActivatedRoute, private eventSvc: EventsService) { }
@@ -21,7 +21,7 @@ export class DetailsPage implements OnInit {
     this.eventId = +this.route.snapshot.params['eventId'];
     this.eventResponse = await this.eventSvc.getById(this.eventId).toPromise();
     this.event = this.eventResponse.event;
-    this.acknowledgments = await this.eventSvc.getAcknowledgments(this.eventResponse).toPromise();
+    this.acknowledgements = await this.eventSvc.getAcknowledgments(this.eventResponse).toPromise();
   }
 
 }

@@ -26,7 +26,7 @@ export interface Address {
     zip: string;
 }
 
-export interface Acknowledgment {
+export interface Acknowledgement {
     timestamp: Date;
     user: string;
     note: string;
@@ -35,5 +35,5 @@ export interface Acknowledgment {
 export interface Links {
     self: string;
     next: string;
-    acknowledgments: string;
+    acknowledgements: string;
 }
